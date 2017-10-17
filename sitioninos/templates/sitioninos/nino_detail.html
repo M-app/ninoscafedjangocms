@@ -1,0 +1,14 @@
+{% extends "header.html" %}
+{%block head%}
+{{ block.super }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+      {% if object.foto %}
+      <img src="{{object.foto.url}}">
+      {% endif %}
+      <h2>{{object.nombres}} {{object.apellidos}}</h2>
+      <p>{{object.historia}}</p>
+      <h3>Etapa: <small>{{object.etapa}}</small></h3>
+    </div>
+{% endblock %}

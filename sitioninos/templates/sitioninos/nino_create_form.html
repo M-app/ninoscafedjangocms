@@ -1,0 +1,18 @@
+{%extends "base.html"%}
+{% block title %}
+	Ingresar Niño |	{{block.super}}
+{% endblock %}
+{%block content%}
+
+<!-- {% if errores %}
+	{{errores}}
+{% endif %} -->
+<h1>Agregar Nuevo Niño</h1>
+<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+	{{ form.as_p }}
+	<!-- <input type="text" name="nombre" placeholder="nombre">
+	<input type="text" name="localidad" placeholder="localidad">
+	<input type="text" name="categoria" placeholder="categoria"> -->
+	<button type="submit">Guardar</button>
+</form>
+{%endblock%}

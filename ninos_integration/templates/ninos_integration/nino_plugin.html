@@ -1,0 +1,16 @@
+
+
+
+              <div class="card mx-auto">
+                {% if instance.nino.foto %}
+                <img class="card-img-top img-fluid mx-auto rounded img-thumbnail" src="{{instance.nino.foto.url}}" alt="Foto Niño">
+                {% endif %}
+                <div class="card-body">
+                  <h4 class="card-title">{{instance.nino.nombres}} {{instance.nino.apellidos}}</h4>
+                  <p class="card-text texto-historia">{{instance.nino.historia}}</p>
+                  <div class="text-center">
+                    <a href="{{instance.nino.get_absolute_url}}" class="btn btn-outline-success">Ver Historia</a>
+                  </div>
+                </div>
+              </div>   
+          

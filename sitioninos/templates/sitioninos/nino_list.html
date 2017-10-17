@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles i18n cms_tags sekizai_tags menu_tags %}
+{% block title %}
+    {% page_attribute "page_title" %}
+{% endblock %}
+
+
+{% block content %}
+    {% placeholder content or %}
+        <p>Becados</p>
+    {% endplaceholder %}
+        {% for obj in object_list %}
+          <div class="col-12 col-md-6 col-lg-4 nino-item">
+              <div class="card mx-auto">
+                {% if obj.foto %}
+                <img class="card-img-top img-fluid mx-auto rounded img-thumbnail" src="{{obj.foto.url}}" alt="Foto Niño">
+                {% endif %}
+                <div class="card-body">
+                  <h4 class="card-title">{{obj.nombres}} {{obj.apellidos}}</h4>
+                  <p class="card-text texto-historia">{{obj.historia}}</p>
+                  <div class="text-center">
+                    <a href="{{obj.get_absolute_url}}" class="btn btn-outline-success">Ver Historia</a>
+                  </div>
+                </div>
+              </div>   
+          </div>
+        {% endfor %}
+{% endblock content %}
+
+
